@@ -383,7 +383,6 @@ const renderTemplate = (container, template, place) => {
 renderTemplate(mainControl, createMenuTemplate(), `beforeend`);
 renderTemplate(main, createFilterTemplate(), `beforeend`);
 renderTemplate(main,createBoardTemplate(), `beforeend`);
-
 const boardElement = main.querySelector(`.board`);
 const taskListElement = boardElement.querySelector(`.board__tasks`);
 
