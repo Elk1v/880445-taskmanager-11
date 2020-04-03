@@ -1,4 +1,3 @@
-'use strict';
 const TASK_COUNT = 3;
 
 const main = document.querySelector(`.main`);
@@ -41,7 +40,7 @@ const createMenuTemplate = () => {
 };
 
 const createFilterTemplate = () => {
-  return(
+  return (
     `<section class="main__filter filter container">
     <input
       type="radio"
@@ -105,7 +104,7 @@ const createFilterTemplate = () => {
 };
 
 const createBoardTemplate = () => {
-  return(
+  return (
     `
     <section class="board container">
     <div class="board__filter-list">
@@ -116,7 +115,7 @@ const createBoardTemplate = () => {
 
     <div class="board__tasks"></div>
     </section>
-    `  
+    `
   );
 };
 
@@ -377,21 +376,21 @@ const createLoadMoreBtnTemplate = () => {
 };
 
 const renderTemplate = (container, template, place) => {
-  container.insertAdjacentHTML(place, template)
+  container.insertAdjacentHTML(place, template);
 };
 
 renderTemplate(mainControl, createMenuTemplate(), `beforeend`);
 renderTemplate(main, createFilterTemplate(), `beforeend`);
-renderTemplate(main,createBoardTemplate(), `beforeend`);
+renderTemplate(main, createBoardTemplate(), `beforeend`);
 const boardElement = main.querySelector(`.board`);
 const taskListElement = boardElement.querySelector(`.board__tasks`);
 
 renderTemplate(taskListElement, createTaskEditTemplate(), `beforeend`);
 
-{ //render 3 tasks
-  for (let i = 0; i < TASK_COUNT; i++) {
-    renderTemplate(taskListElement, createTaskTemplate(), `beforeend`);
-  }
+
+for (let i = 0; i < TASK_COUNT; i++) {
+  renderTemplate(taskListElement, createTaskTemplate(), `beforeend`);
 }
+
 
 renderTemplate(boardElement, createLoadMoreBtnTemplate(), `beforeend`);
